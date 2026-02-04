@@ -1,22 +1,26 @@
-import { TextInput, StyleSheet, TextInputProps } from 'react-native';
+import { TextInput, StyleSheet } from 'react-native';
 import React from 'react';
 
 type InputProps = {
+  placeholder: string;
   value: string;
   onChangeText: (text: string) => void;
-} & TextInputProps;
+  secureTextEntry?: boolean;
+};
 
 const Input: React.FC<InputProps> = ({
   value,
   onChangeText,
-  ...props
+  placeholder,
+  secureTextEntry,
 }) => {
   return (
     <TextInput
+      placeholder={placeholder}
       style={styles.input}
       value={value}
       onChangeText={onChangeText}
-      {...props}
+      secureTextEntry={secureTextEntry}
     />
   );
 };

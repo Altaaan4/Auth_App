@@ -1,23 +1,18 @@
 import React, { useState } from 'react';
 import { View, StyleSheet } from 'react-native';
-import { useNavigation } from '@react-navigation/native'; // 1. Bunu ekle
-import Input from '../../components/Inputs/input';
-import Button from '../../components/Buttons/Button';
+import { useNavigation } from '@react-navigation/native';
+import Input from '../../components/InputBox';
+import Button from '../../components/Button';
 
-const HomeScreen: React.FC = () => {
+const HomeScreen = () => {
   const [name, setName] = useState('');
   const [password, setPassword] = useState('');
 
-  // 2. Navigation hook'unu tanımla
   const navigation = useNavigation<any>();
 
   return (
     <View style={styles.container}>
-      <Input
-        placeholder="Name - Surname"
-        value={name}
-        onChangeText={setName}
-      />
+      <Input placeholder="Name - Surname" value={name} onChangeText={setName} />
 
       <Input
         placeholder="Password"
@@ -26,11 +21,7 @@ const HomeScreen: React.FC = () => {
         secureTextEntry
       />
 
-      {/* 3. Doğrudan onPress içinde yönlendir */}
-      <Button 
-        title="Login" 
-        onPress={() => navigation.navigate('Home')} 
-      />
+      <Button title="Login" onPress={() => navigation.navigate('Home')} />
     </View>
   );
 };
