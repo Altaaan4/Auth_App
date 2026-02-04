@@ -1,41 +1,16 @@
-import React, { useState } from 'react';
-import { View, Alert, StyleSheet } from 'react-native';
-import Input from '../../components/Inputs/input';
-import Button from '../../components/Buttons/Button';
+import { StyleSheet, Text, View } from 'react-native'
+import React from 'react'
 
-const HomeScreen: React.FC = () => {
-  const [name, setName] = useState('');
-  const [password, setPassword] = useState('');
-
-
-
+const HomeScreen = () => {
   return (
     <View style={styles.container}>
-      <Input
-        placeholder="Name - Surname"
-        value={name}
-        onChangeText={setName}
-      />
-
-      <Input
-        placeholder ="Password"
-        value={password}
-        onChangeText={setPassword}
-        secureTextEntry
-      />
-
-      <Button title="Login"   onPress={() => Alert.alert('Hata', 'Butona basıldı!')} />
+      <Text>index</Text>
     </View>
-  );
-};
+  )
+}
 
 export default HomeScreen;
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    padding: 50,
-    justifyContent: 'center',
-  },
-  
-});
+const styles = StyleSheet.create({ 
+    container:{}
+})
