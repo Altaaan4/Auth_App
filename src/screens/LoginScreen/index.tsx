@@ -11,8 +11,8 @@ const LoginScreen = () => {
 
   const navigation = useNavigation<any>();
 
-  const Login = () => {
 
+const Login = () => {}
     const TrueName = "altan";
     const TruePassword = "1234";
 
@@ -22,7 +22,7 @@ const LoginScreen = () => {
     } else {
       Alert.alert("Hatalı giriş", "Name veya password yanlış");
     }
-  };
+  
 
   return (
     <View style={styles.container}>
