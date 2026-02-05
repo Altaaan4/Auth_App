@@ -12,8 +12,7 @@ const LoginScreen = () => {
   const navigation = useNavigation<any>();
 
 
-const Login = () => {}
-    const TrueName = "altan";
+const Login = () => { const TrueName = "altan";
     const TruePassword = "1234";
 
     if (name === TrueName && password === TruePassword) {
@@ -21,7 +20,8 @@ const Login = () => {}
 
     } else {
       Alert.alert("Hatalı giriş", "Name veya password yanlış");
-    }
+    }}
+   
   
 
   return (
@@ -42,7 +42,7 @@ const Login = () => {}
 
       <Button
         title="Login"
-        onPress={Login}
+        onPress={ Login   }
       />
 
     </View>
