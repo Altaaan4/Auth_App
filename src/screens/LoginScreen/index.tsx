@@ -1,18 +1,37 @@
 import React, { useState } from 'react';
-import { View, StyleSheet } from 'react-native';
+import { View, StyleSheet, Alert } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import Input from '../../components/InputBox';
 import Button from '../../components/Button';
 
-const HomeScreen = () => {
+const LoginScreen = () => {
+
   const [name, setName] = useState('');
   const [password, setPassword] = useState('');
 
   const navigation = useNavigation<any>();
 
+  const Login = () => {
+
+    const TrueName = "altan";
+    const TruePassword = "1234";
+
+    if (name === TrueName && password === TruePassword) {
+      navigation.navigate("Home");
+
+    } else {
+      Alert.alert("Hatalı giriş", "Name veya password yanlış");
+    }
+  };
+
   return (
     <View style={styles.container}>
-      <Input placeholder="Name - Surname" value={name} onChangeText={setName} />
+
+      <Input
+        placeholder="Name - Surname"
+        value={name}
+        onChangeText={setName}
+      />
 
       <Input
         placeholder="Password"
@@ -21,12 +40,16 @@ const HomeScreen = () => {
         secureTextEntry
       />
 
-      <Button title="Login" onPress={() => navigation.navigate('Home')} />
+      <Button
+        title="Login"
+        onPress={Login}
+      />
+
     </View>
   );
 };
 
-export default HomeScreen;
+export default LoginScreen;
 
 const styles = StyleSheet.create({
   container: {
