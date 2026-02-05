@@ -1,37 +1,28 @@
 import React, { useState } from 'react';
 import { View, StyleSheet, Alert } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
-import Input from '../../components/InputBox';
-import Button from '../../components/Button';
+import { Input, Button } from '@components';
 
 const LoginScreen = () => {
-
   const [name, setName] = useState('');
   const [password, setPassword] = useState('');
 
   const navigation = useNavigation<any>();
 
-
-const Login = () => { const TrueName = "altan";
-    const TruePassword = "1234";
+  const Login = () => {
+    const TrueName = 'altan';
+    const TruePassword = '1234';
 
     if (name === TrueName && password === TruePassword) {
-      navigation.navigate("Home");
-
+      navigation.navigate('Home');
     } else {
-      Alert.alert("Hatalı giriş", "Name veya password yanlış");
-    }}
-   
-  
+      Alert.alert('Hatalı giriş', 'Name veya password yanlış');
+    }
+  };
 
   return (
     <View style={styles.container}>
-
-      <Input
-        placeholder="Name - Surname"
-        value={name}
-        onChangeText={setName}
-      />
+      <Input placeholder="Name - Surname" value={name} onChangeText={setName} />
 
       <Input
         placeholder="Password"
@@ -40,11 +31,7 @@ const Login = () => { const TrueName = "altan";
         secureTextEntry
       />
 
-      <Button
-        title="Login"
-        onPress={ Login   }
-      />
-
+      <Button title="Login" onPress={Login} />
     </View>
   );
 };
