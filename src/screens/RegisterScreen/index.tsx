@@ -11,22 +11,25 @@ const RegisterScreen = () => {
   const navigation = useNavigation<any>();
   return (
     <View style={styles.container}>
-      <Input
-        placeholder="Name - Surname"
-        value={newName}
-        onChangeText={setNewName}
-      />
-
-      <Input
-        placeholder="Password"
-        value={newpassword}
-        onChangeText={setNewPassword}
-        secureTextEntry
-      />
-      <Button
-        title="Save Account"
-        onPress={() => navigation.navigate(LoginScreen)}
-      />
+      <View style={styles.inputContainer}>
+        <Input
+          placeholder="Name - Surname"
+          value={newName}
+          onChangeText={setNewName}
+        />
+        <Input
+          placeholder="Password"
+          value={newpassword}
+          onChangeText={setNewPassword}
+          secureTextEntry
+        />
+      </View>
+      <View style={styles.buttonContainer}>
+        <Button
+          title="Save Account"
+          onPress={() => navigation.navigate(LoginScreen)}
+        />
+      </View>
     </View>
   );
 };
@@ -36,7 +39,18 @@ export default RegisterScreen;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    padding: 50,
+    backgroundColor: 'white',
+  },
+  inputContainer: {
+    padding: 10,
+    alignItems: 'center',
     justifyContent: 'center',
+    gap: 20,
+  },
+  buttonContainer: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    margin: 10,
+    gap: 10,
   },
 });

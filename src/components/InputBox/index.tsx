@@ -29,11 +29,11 @@ export default Input;
 
 const styles = StyleSheet.create({
   input: {
+    width: '80%',
     borderWidth: 1,
     borderColor: '#ccc',
-    padding: 12,
-    borderRadius: 8,
-    marginBottom: 10,
+    padding: 15,
+    borderRadius: 30,
     fontSize: 16,
   },
 });
