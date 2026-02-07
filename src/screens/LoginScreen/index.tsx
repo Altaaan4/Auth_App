@@ -22,20 +22,27 @@ const LoginScreen = () => {
 
   return (
     <View style={styles.container}>
-      <Input placeholder="Name - Surname" value={name} onChangeText={setName} />
+      <View style={styles.inputContainer}>
+        <Input
+          placeholder="Name - Surname"
+          value={name}
+          onChangeText={setName}
+        />
+        <Input
+          placeholder="Password"
+          value={password}
+          onChangeText={setPassword}
+          secureTextEntry
+        />
+      </View>
+      <View style={styles.buttonContainer}>
+        <Button title="Login" onPress={Login} />
 
-      <Input
-        placeholder="Password"
-        value={password}
-        onChangeText={setPassword}
-        secureTextEntry
-      />
-
-      <Button title="Login" onPress={Login} />
-      <TextButton
-        text="Click here to create an account."
-        onPress={() => navigation.navigate('Register')}
-      />
+        <TextButton
+          text="Click here to create an account."
+          onPress={() => navigation.navigate('Register')}
+        />
+      </View>
     </View>
   );
 };
@@ -45,7 +52,18 @@ export default LoginScreen;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    padding: 50,
+    backgroundColor: 'white',
+  },
+  inputContainer: {
+    padding: 10,
+    alignItems: 'center',
     justifyContent: 'center',
+    gap: 20,
+  },
+  buttonContainer: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    margin: 10,
+    gap: 10,
   },
 });

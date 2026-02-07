@@ -1,5 +1,5 @@
-import { StyleSheet, Text,TouchableOpacity } from 'react-native'
-import React from 'react'
+import { StyleSheet, Text, TouchableOpacity } from 'react-native';
+import React from 'react';
 
 type TextButtonProps = {
   text: string;
@@ -9,20 +9,18 @@ type TextButtonProps = {
 const TextButton: React.FC<TextButtonProps> = ({ text, onPress }) => {
   return (
     <TouchableOpacity onPress={onPress}>
-      <Text style={styles.TextContainer}>{text}</Text>
+      <Text style={styles.text}>{text}</Text>
     </TouchableOpacity>
   );
 };
 
-export default TextButton
+export default TextButton;
 
 const styles = StyleSheet.create({
-    TextContainer: {
+  text: {
     color: 'black',
     fontSize: 15,
     fontWeight: '900',
-    padding:40,
-    alignItems:'center'
-  },},
-    
-)
+    alignSelf: 'center',
+  },
+});
