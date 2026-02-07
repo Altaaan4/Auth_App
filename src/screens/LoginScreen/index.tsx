@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import { View, StyleSheet, Alert } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
-import { Input, Button,TextButton } from '@components';
-
+import { Input, Button, TextButton } from '@components';
 
 const LoginScreen = () => {
   const [name, setName] = useState('');
@@ -34,12 +33,10 @@ const LoginScreen = () => {
 
       <Button title="Login" onPress={Login} />
       <TextButton
-  text="Click here to create an account."
-  onPress={() => navigation.navigate('Register')}
-/>
-      
+        text="Click here to create an account."
+        onPress={() => navigation.navigate('Register')}
+      />
     </View>
-
   );
 };
 
